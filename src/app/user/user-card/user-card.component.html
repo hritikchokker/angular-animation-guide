@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-title-group>
+    <mat-card-title>{{user?.name}}</mat-card-title>
+    <mat-card-subtitle>{{user?.email}}</mat-card-subtitle>
+    <!-- <img matCardImage src="Side image"> -->
+  </mat-card-title-group>
+  <!-- <img matCardImage src="Card wide image source"> -->
+  <mat-card-content>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur quis deserunt laboriosam. Omnis, delectus.
+    Fuga
+    laudantium labore accusamus tempore nisi, quae distinctio nihil quas enim sit? Maiores voluptatum optio debitis!
+  </mat-card-content>
+  <mat-card-actions align="center">
+    <button [routerLink]="['/user',user?.id]" mat-raised-button>Details</button>
+    <!-- <button mat-button (click)="onAction(event)">Action2</button> -->
+
+  </mat-card-actions>
+  <mat-card-footer>
+    {{user?.website}}
+  </mat-card-footer>
+</mat-card>
