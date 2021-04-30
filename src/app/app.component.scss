@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+  justify-content: center;
+  p {
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgb(255, 38, 0);
+    font-style: italic;
+    .typeone {
+      animation: upone 4s;
+      // background: red;
+      color: rgb(0, 139, 23);
+      position: relative;
+      animation-iteration-count: 100;
+    }
+    .typetwo {
+      // background: red;
+      color: darkblue;
+      animation: uptwo 4s;
+      position: relative;
+      animation-iteration-count: 100;
+    }
+  }
+}
+@keyframes uptwo {
+  from {
+    top: -200px;
+  }
+  to {
+    top: 0px;
+  }
+}
+@keyframes upone {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 200px;
+  }
+}
