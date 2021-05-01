@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { UserService } from '../service/user.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-users-list',
@@ -10,8 +11,17 @@ import { UserService } from '../service/user.service';
 })
 export class UsersListComponent implements OnInit {
   userList$!: Observable<any[]>;
+  isLoading!: boolean;
   constructor(private $userService: UserService) {
     this.userList$ = this.$userService.userList$;
+    this.$userService.userList$.pipe(tap((data: any[]) => {
+      debugger;
+      if (!data) {
+        this.isLoading = true;
+      } else {
+        this.isLoading = false;
+      }
+    }));
   }
 
   ngOnInit(): void {

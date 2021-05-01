@@ -1,8 +1,7 @@
 mat-form-field {
   width: 50vw;
-  input {
-    text-align: center;
-  }
 }
-input.active {
+input:active {
+  transform: scale(1.5);
+  transition: 0.5s all ease;
 }

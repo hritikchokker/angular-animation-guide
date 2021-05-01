@@ -8,12 +8,11 @@ export class UserService {
   userList$: BehaviorSubject<any> = new BehaviorSubject([]);
   constructor(private $http: HttpClient) { }
 
-  fetchUsers() {
+  fetchUsers(): void {
     this.$http.get<any>('https://jsonplaceholder.typicode.com/users')
       .subscribe((data: any) => {
         this.userList$.next(data);
-      })
-
+      });
   }
 
 

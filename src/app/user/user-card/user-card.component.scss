@@ -1,15 +1,31 @@
 :host {
   // margin: 10px;
   text-align: center;
-  margin-bottom: 20px;
+}
+mat-card {
+  cursor: pointer;
 }
 mat-card:hover {
-  transform: scale(1.1);
-  transition: 0.5s all ease-in-out;
+  transform: rotate(360deg);
+  transition: 1s all ease-in-out;
+}
+title-container {
+  &__wrapper {
+    width: 100%;
+  }
+}
+.card-container {
+  border-radius: 15px;
+  background: linear-gradient(135deg, #f36265 0%, #961276 100%);
+  margin-bottom: 20px;
+  color: #fff;
 }
 
 mat-card-title-group {
   text-align: center;
+  div {
+    width: 100%;
+  }
 }
 mat-card-content {
   text-align: center;
