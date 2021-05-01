@@ -3,14 +3,21 @@
 </div>
 <div class="container" fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
   <ng-container *ngIf="userList$ |async as userList">
-    <ng-container *ngFor="let user of userList">
-      <app-user-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%"
-        class="container__card" [userDetail]="user"></app-user-card>
+    <ng-container *ngFor="let user of userList;let index=index;">
+      <app-user-card *ngIf="user" @animateDestroy fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%" class="container__card" [userDetail]="user"></app-user-card>
+    </ng-container>
+    <ng-container *ngIf="userList?.length ===0 && !isLoading">
+      <mat-toolbar>
+        <p>
+          No Data Found
+        </p>
+      </mat-toolbar>
     </ng-container>
   </ng-container>
-<!-- </div>
+  <!-- </div>
 <ng-container>
-  <div class="loader">
+</ng-container> -->
+  <div *ngIf="isLoading" class="loader">
     <mat-progress-spinner mode="indeterminate" color="primary"></mat-progress-spinner>
   </div>
-</ng-container> -->

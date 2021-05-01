@@ -3,7 +3,8 @@ import {
   EventEmitter,
   Input,
   OnDestroy,
-  OnInit
+  OnInit,
+  Output
 } from '@angular/core';
 import {
   debounceTime,
@@ -24,7 +25,7 @@ export class SearchFieldComponent implements OnInit, OnDestroy {
 
   subscription: Subscription[] = [];
   @Input() placeholder = 'search here';
-  searchedValue: EventEmitter<any> = new EventEmitter();
+  @Output() searchedValue: EventEmitter<any> = new EventEmitter();
   searchControl: FormControl = new FormControl();
   constructor() { }
 
@@ -33,19 +34,11 @@ export class SearchFieldComponent implements OnInit, OnDestroy {
       this.searchControl.valueChanges
         .pipe(
           debounceTime(500),
-          distinctUntilChanged(),
-          filter((data: any) => {
-            if (data) {
-              return data.trim();
-            }
-          })
+          distinctUntilChanged()
         )
         // tslint:disable-next-line: deprecation
         .subscribe((data: string) => {
-          if (data) {
-            console.log(data, 'emit');
-            this.searchedValue.emit(data);
-          }
+          this.searchedValue.emit(this.searchControl.value);
         })
     );
   }

@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 import { SearchFieldModule } from '../shared/modules/search-field/search-field.module';
 import { UserCardComponent } from './user-card/user-card.component';
@@ -36,6 +37,7 @@ const routes: Routes = [
     MatCardModule,
     MatGridListModule,
     SearchFieldModule,
+    MatToolbarModule,
     MatButtonModule,
     FlexLayoutModule,
     MatProgressSpinnerModule
