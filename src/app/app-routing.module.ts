@@ -10,6 +10,14 @@ const routes: Routes = [
   {
     path: 'user',
     loadChildren: () => import('./user/user.module').then(m => m.UserModule)
+  },
+  {
+    path: 'multi-feature',
+    loadChildren: () => import('./multi-feature/multi-feature.module').then(m => m.MultiFeatureModule)
+  },
+  {
+    path: '**',
+    loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
   }
 ];
 

@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5%;
+  height: 70vh;
+}
+
+.card-wrapper {
+  margin-top: 20px;
+  box-shadow: 20px;
+  &__title {
+    width: 100%;
+    text-align: center;
+  }
+  mat-card {
+    text-align: center;
+    background: linear-gradient(135deg, #7117ea 0%, #ea6060 100%);
+  }
+  max-width: 300px;
+}
+.card-wrapper:hover {
+  transform: scale(1.2);
+  mat-card {
+    border-radius: 20%;
+  }
+  transform: rotate(360deg);
+  transition: 2s all ease;
+}

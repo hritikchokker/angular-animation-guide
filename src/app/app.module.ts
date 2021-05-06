@@ -6,7 +6,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from './shared/modules/layout/layout.module';
 import { NgModule } from '@angular/core';
-
 @NgModule({
   declarations: [
     AppComponent

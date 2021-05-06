@@ -1,0 +1,31 @@
+<div class="container">
+  <div>
+    <button (@openClose.start)="onAnimationEvent($event)" (@openClose.done)="onAnimationEvent($event)"
+      (mouseover)="toggle(true)" [@openClose]="isOpen ? 'open' : 'closed'" mat-raised-button
+      (mouseleave)="toggle(false)" color="accent">Action
+      1</button>
+  </div>
+
+  <div class="card-wrapper">
+    <mat-card>
+      <mat-card-header>
+        <div class="card-wrapper__title">
+          <mat-card-title>Title</mat-card-title>
+          <mat-card-subtitle>Subtitle</mat-card-subtitle>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit hic, ab nobis voluptates consequatur odit
+        ratione! Quas nihil voluptate rerum laudantium nulla recusandae exercitationem at, dolor consectetur, id minus.
+        Sint?
+      </mat-card-content>
+      <mat-card-actions align="start">
+        <!-- <button mat-button (click)="onAction1">Action1</button> -->
+
+      </mat-card-actions>
+      <mat-card-footer>
+        Footer
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>
