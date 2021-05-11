@@ -1,0 +1,25 @@
+<mat-card class="card-container">
+  <mat-card-header>
+    <div class="card-container__header">
+      <mat-card-title>Title</mat-card-title>
+      <mat-card-subtitle>
+        {{post?.title}}
+      </mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <!-- <img matCardImage src="Card wide image source"> -->
+  <mat-card-content>
+    <div class="card-container__body">
+      <p [ngStyle]="{'word-wrap':'break-word'}">
+        {{post?.body}}
+      </p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions align="start">
+    <button mat-raised-button color="accent">Action1</button>
+
+  </mat-card-actions>
+  <mat-card-footer>
+    Footer
+  </mat-card-footer>
+</mat-card>

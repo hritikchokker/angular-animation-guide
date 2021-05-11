@@ -25,6 +25,9 @@ mat-sidenav-content {
   // overflow: hidden;
   // overflow-y: hidden;
 }
+span {
+  cursor: pointer;
+}
 
 .mat-toolbar.mat-primary {
   position: sticky;

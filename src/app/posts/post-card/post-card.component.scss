@@ -1,0 +1,17 @@
+.card-container {
+  width: 300px;
+  margin: 25px;
+  background: linear-gradient(135deg, #b1ea4d 0%, #459522 100%);
+  &__header {
+    width: 100%;
+    text-align: center;
+  }
+  &__body {
+    text-align: center;
+  }
+}
+mat-card-content,
+mat-card-actions,
+mat-card-footer {
+  text-align: center;
+}
