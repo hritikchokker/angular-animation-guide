@@ -1,6 +1,8 @@
 .card-container {
-  width: 300px;
+  width: 500px;
   margin: 25px;
+  height: 300px;
+  border-radius: 43px;
   background: linear-gradient(135deg, #b1ea4d 0%, #459522 100%);
   &__header {
     width: 100%;
@@ -8,6 +10,11 @@
   }
   &__body {
     text-align: center;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .card-container {
+    width: 250px;
   }
 }
 mat-card-content,

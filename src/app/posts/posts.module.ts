@@ -10,6 +10,7 @@ import { NgModule } from '@angular/core';
 import { PostCardComponent } from './post-card/post-card.component';
 import { PostsComponent } from './posts.component';
 import { PostsService } from './posts.service';
+import { IntersectionObserverModule } from '../shared/directives/intersection-observer/intersection-observer.module';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    IntersectionObserverModule,
     FlexLayoutModule,
     MatProgressSpinnerModule
   ], providers: [PostsService]

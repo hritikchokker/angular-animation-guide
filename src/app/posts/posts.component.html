@@ -1,10 +1,26 @@
-<ng-container *ngIf="post$ |async as postList;else loading">
-  <div class="list-wrapper">
-    <app-post-card *ngFor="let post of postList" [post]="post"></app-post-card>
+<h2 [ngStyle]="{'text-align':'center'}">
+  This Will show the animation of reveal on scroll effect
+</h2>
+<ng-container>
+  <div fxLayout="column" fxLayoutAlign="space-around center" class="list-wrapper">
+    <ng-container *ngFor="let post of postList;let i=index">
+      <!-- [intersectionDebounce]="0" -->
+      <div appIntersectionObserver (visibilityChange)="onVisibilityChanged(post, $event,i)" [intersectionDebounce]="0"
+        [@addedOn]="post?.isVisible?'inView':'gone'">
+        <app-post-card [post]="post"></app-post-card>
+      </div>
+    </ng-container>
+    <div *ngIf="showUpBtn" class="list-wrapper__topBtn">
+      <!-- <button > -->
+      <mat-icon (click)="scrollTop()">
+        arrow_circle_up
+      </mat-icon>
+      <!-- </button> -->
+    </div>
   </div>
 </ng-container>
-<ng-template #loading>
-  <div class="loader-wrapper">
-    <mat-progress-spinner mode="indeterminate" color="primary" [strokeWidth]="10"></mat-progress-spinner>
-  </div>
-</ng-template>
+<!-- <ng-template #loading> -->
+<div *ngIf="isLoading" class="loader-wrapper">
+  <mat-progress-spinner mode="indeterminate" color="primary" [strokeWidth]="10"></mat-progress-spinner>
+</div>
+<!-- </ng-template> -->

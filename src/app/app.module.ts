@@ -18,7 +18,9 @@ import { NgModule } from '@angular/core';
     FlexLayoutModule,
     LayoutModule,
   ],
-  providers: [],
+  providers: [{
+    provide: Window, useValue: window
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
