@@ -1,9 +1,9 @@
 <main>
 
   <app-header-sidenav>
-    <div>
+    <div [@routeAnimations]="prepareRoute(outlet)">
       <app-main>
-        <router-outlet></router-outlet>
+        <router-outlet #outlet="outlet"></router-outlet>
       </app-main>
     </div>
   </app-header-sidenav>

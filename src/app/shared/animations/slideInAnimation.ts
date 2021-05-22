@@ -10,7 +10,7 @@ import {
 
 export const slideInAnimation: any =
   trigger('routeAnimations', [
-    transition('HomePage <=> AboutPage', [
+    transition('HomePage <=> Userpage', [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
@@ -23,18 +23,18 @@ export const slideInAnimation: any =
       query(':enter', [
         style({ left: '-100%' })
       ]),
-      query(':leave', animateChild()),
+      query(':leave', animateChild(), { optional: true }),
       group([
         query(':leave', [
           animate('300ms ease-out', style({ left: '100%' }))
-        ]),
+        ], { optional: true }),
         query(':enter', [
           animate('300ms ease-out', style({ left: '0%' }))
         ])
       ]),
       query(':enter', animateChild()),
     ]),
-    transition('* <=> FilterPage', [
+    transition('* <=> Userpage', [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
@@ -43,19 +43,19 @@ export const slideInAnimation: any =
           left: 0,
           width: '100%'
         })
-      ]),
+      ], { optional: true }),
       query(':enter', [
         style({ left: '-100%' })
       ]),
-      query(':leave', animateChild()),
+      query(':leave', animateChild(), { optional: true }),
       group([
         query(':leave', [
           animate('200ms ease-out', style({ left: '100%' }))
-        ]),
+        ], { optional: true }),
         query(':enter', [
           animate('300ms ease-out', style({ left: '0%' }))
-        ])
+        ], { optional: true })
       ]),
-      query(':enter', animateChild()),
+      query(':enter', animateChild(), { optional: true }),
     ])
   ]);
