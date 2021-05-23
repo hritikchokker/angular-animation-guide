@@ -1,29 +1,52 @@
 .container {
-  display: flex;
-  align-items: center;
-  min-height: 50vh;
   justify-content: center;
-  h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    color: rgb(255, 38, 0);
-    font-style: italic;
-    .typeone {
-      animation: upone 4s;
-      // background: red;
-      color: rgb(0, 139, 23);
-      position: relative;
-      // animation-iteration-count: 100;
-    }
-    .typetwo {
-      // background: red;
-      color: darkblue;
-      animation: uptwo 4s;
-      position: relative;
-      // animation-iteration-count: 100;
+  align-items: center;
+  margin-top: 30px;
+  padding-bottom: 120px;
+  &__one {
+    h1 {
+      text-align: center;
+      font-size: 4rem;
+      font-weight: 800;
+      letter-spacing: 10px;
+      margin-top: 25%;
+      color: rgb(255, 38, 0);
+      font-style: italic;
+      .typeone {
+        animation: upone 4s;
+        margin-top: 38px;
+        color: rgb(0, 139, 23);
+        position: relative;
+        // animation-iteration-count: 100;
+      }
+      .typetwo {
+        // background: red;
+        color: darkblue;
+        animation: uptwo 4s;
+
+        position: relative;
+        // animation-iteration-count: 100;
+      }
     }
   }
 }
+@media only screen and (max-width: 500px) {
+  .container {
+    &__one {
+      h1 {
+        font-size: 2rem;
+        .typeone {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+span {
+  margin-bottom: 20px;
+}
+
 @keyframes uptwo {
   from {
     top: -150px;

@@ -1,40 +1,33 @@
-<div fxLayout="row" fxFlexFill>
+<div fxLayout="column" class="container" fxFlexFill>
   <div fxFlex="100" class="first">
     <h1>Angular Animations</h1>
     <h3>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima quis, repellat tempore quasi rem, nam aperiam
-      dicta officiis recusandae aspernatur laudantium distinctio iusto? Consequuntur quisquam sunt labore quis
-      blanditiis quaerat!
-      <br>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat cum reiciendis sequi incidunt eligendi suscipit
-      sit quas, nam nostrum aperiam molestias! Rerum sequi, sapiente quasi dicta accusamus libero optio cum?
+      Below is the implementation of many css animations effects that are implements in angular using angular <a
+        href="https://www.npmjs.com/package/@angular/animations" target="_blank">animation</a> module
     </h3>
 
     <div>
       <mat-form-field>
-        <mat-select placeholder="common animations">
-          <mat-option>
-            Slide In
+        <mat-select [formControl]="selectControl">
+          <mat-option [attr.placeholder]="'select animation'" value=null>
+            Select Animation
           </mat-option>
-          <mat-option>
-            Slide Out
-          </mat-option>
-          <mat-option>
-            dummy
-          </mat-option>
-          <mat-option>
-            dummy 1
-          </mat-option>
-          <mat-option>
-            dummy 2
+          <mat-option [value]="animation?.value" *ngFor="let animation of animationArr">
+            {{animation?.name}}
           </mat-option>
         </mat-select>
       </mat-form-field>
     </div>
     <div class="first__actions">
-      <button mat-raised-button color="warn">
+      <button [disabled]=" selectControl?.value === 'null'" (click)="toggle()" mat-raised-button color="warn">
         Animate
       </button>
     </div>
   </div>
-</div>
+
+  <div *ngIf="selectControl && selectControl?.value === 'zoomIn'" (@zoomIn.done)="this.isOpened = false"
+    [@zoomIn]="isOpened?'opened':'closed'" class="animation_container">
+  </div>
+  <div *ngIf="selectControl && selectControl?.value === 'zoomOut'" (@zoomOut.done)="this.isOpened = false"
+    [@zoomOut]="isOpened?'opened':'closed'" class="animation_container">
+  </div>

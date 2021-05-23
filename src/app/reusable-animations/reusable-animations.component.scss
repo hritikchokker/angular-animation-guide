@@ -1,7 +1,40 @@
 .first {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 30px;
   height: auto;
   &__actions {
   }
 }
+.container {
+  padding-bottom: 40px;
+}
+
+.animation_container {
+  height: 350px;
+  width: 400px;
+  margin: auto;
+  margin-top: 30px;
+  border-radius: 20%;
+  background: url("/assets/icons/icon-512x512.png");
+  background-size: cover;
+  background-position: center;
+  // box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3);
+}
+// animation: 3s linear 1s infinite running slidein;
+@keyframes slidein {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .animation_container {
+    margin-left: -13px;
+  }
+}
+// .animation_container:hover {
+//   transform: scale(1.2);
+// }
